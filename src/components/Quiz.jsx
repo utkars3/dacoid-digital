@@ -31,7 +31,7 @@ const Quiz = () => {
   }, [quizOver, score]);
 
   return (
-    <div className="quiz-container">
+    <div className="question-box ">
       {!quizOver && <Timer key={currentQuestionIndex} onTimeUp={handleAnswer}/>}
       
       {quizOver ? (

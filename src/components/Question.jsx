@@ -13,6 +13,7 @@ const Question = ({ question, onAnswer }) => {
     };
 
     return (
+      <>
         <div className="question-container">
             <h3>{question.text}</h3>
 
@@ -27,14 +28,15 @@ const Question = ({ question, onAnswer }) => {
             ) : (
                 // ✅ Show multiple-choice buttons for MCQs
                 question.options.map((option, index) => (
-                    <button key={index} onClick={() => onAnswer(option)}>
+                    <button className="answer-btn" key={index} onClick={() => onAnswer(option)}>
                         {option}
                     </button>
                 ))
             )}
 
-            <button onClick={handleSubmit}>Submit</button>
+            <button id="submit-button" onClick={handleSubmit}>Submit</button>
         </div>
+        </>
     );
 };
 
